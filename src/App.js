@@ -1,23 +1,27 @@
 import './App.css'; //all files need to be capitalized in code and in file build
-import Header from './components/Header'
-import Challenge from './components/challenges/day01/Challenge'
-import Footer from "./components/challenges/day01/Footer"
-import Home from "./components/challenges/day01/Home"
+//import NameProp from "./components/challenges/day02/NameProp";
+import Contact from "./components/challenges/day02/Contact"
+import State from "./components/challenges/day02/State"
 
 function App() { //this is a root component
   //const name = 'Sarah' //JS above return statement can be injected into JSX using { }
   //*parent function*
+  let props ={
+    name: "Sarah",
+    age: "35",
+    school: "Purdue",
+    graduationYear: "2007"} //object like one from server that is passed into Contact component
+
   return (
     <div className="App">
-      {/* <h1>Welcome to React, {name}</h1>
-      <h2>We just modified our root App component</h2>
-      <h3>CHALLENGE!</h3>
-      <p>Create ./components/challenges/day 01 folder</p>
-      <p>Create a component with h1 tag of your name, p tag with description of yourself, and an unordered list of two truths and a lie</p> */}
-      <Header /> {/* this is how you mount a component */}
-      <Challenge /> { /* child functions */ }
-      <Home />
-      <Footer />
+      {/*<NameProp name = "Sarah"
+      <NameProp name = "Erin" />*/}
+      <Contact {...props}/>
+      <p>===========================</p>
+      <State />
+      
+
+      
     </div>
   );
 }
